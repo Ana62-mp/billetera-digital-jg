@@ -15,6 +15,23 @@ public class RegistroBilletera {
 	private final String[] cuentas;
 	private final String[] propietarios;
 	private int totalRegistros;
+// Constructor registro
+
+	public RegistroBilletera(String nombreBanco) {
+
+		// Validación
+
+		if (nombreBanco == null || nombreBanco.trim().isEmpty()) {
+			throw new IllegalArgumentException("El nombre del banco no puede ser null o vacío");
+		}
+
+		this.nombreBanco = nombreBanco.trim();
+		this.cuentas = new String[CAPACIDAD_MAXIMA];
+		this.propietarios = new String[CAPACIDAD_MAXIMA];
+		this.totalRegistros = 0;
+	}
+
+	// registra un nuevo
 
 
 
