@@ -110,6 +110,37 @@ public boolean registrarBilletera(String cuenta, String propietario) {
 
 		System.out.println("========================================\n");
 	}
+	// verifica cuentas(existentes)
+
+	private boolean cuentaExiste(String cuenta) {
+		String cuentaVerificar = cuenta.trim();
+		for (int i = 0; i < totalRegistros; i++) {
+			if (cuentas[i].equals(cuentaVerificar)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public String getNombreBanco() {
+		return nombreBanco;
+	}
+
+	public int getTotalRegistros() {
+		return totalRegistros;
+	}
+
+	public int getCapacidadMaxima() {
+		return CAPACIDAD_MAXIMA;
+	}
+
+	public boolean estaLleno() {
+		return totalRegistros >= CAPACIDAD_MAXIMA;
+	}
+
+	public boolean estaVacio() {
+		return totalRegistros == 0;
+	}
 
 
 }
