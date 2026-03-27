@@ -92,7 +92,24 @@ public boolean registrarBilletera(String cuenta, String propietario) {
 		return false;
 	}
 
+// registro completo
 
+	public void mostrarRegistro() {
+		System.out.println("\n========================================");
+		System.out.println("Banco: " + nombreBanco);
+		System.out.println("Total de billeteras registradas: " + totalRegistros);
+		System.out.println("========================================");
+
+		if (totalRegistros == 0) {
+			System.out.println("No hay billeteras registradas.");
+		} else {
+			for (int i = 0; i < totalRegistros; i++) {
+				System.out.println((i + 1) + ". Cuenta: " + cuentas[i] + SEPARADOR_PROPIETARIO + propietarios[i]);
+			}
+		}
+
+		System.out.println("========================================\n");
+	}
 
 
 }
