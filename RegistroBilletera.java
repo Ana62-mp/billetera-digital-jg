@@ -9,11 +9,16 @@ public class RegistroBilletera {
 	private static final String SEPARADOR = " - ";
 	private static final String SEPARADOR_PROPIETARIO = " | Propietario: ";
 
+// Atributos privados
+
+	private final String nombreBanco;
+	private final String[] cuentas;
+	private final String[] propietarios;
+	private int totalRegistros;
 
 
 
 
 
 
-	
 }
