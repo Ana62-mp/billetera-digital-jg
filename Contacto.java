@@ -1,0 +1,41 @@
+public class Contacto {
+    String nombre;
+    String cuentaDestino;
+    String banco;
+    boolean favorito;
+
+    public Contacto(String nombre, String cuentaDestino, String banco) {
+        this.nombre = nombre;
+        this.cuentaDestino = cuentaDestino;
+        this.banco = banco;
+
+        this.favorito = false;
+    }
+    public void mostrarContacto() {
+        System.out.println("=== Contacto ===");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Cuenta: " + cuentaDestino);
+        System.out.println("Banco: " + banco);
+
+        // Validamos si es favorito o no
+        if (favorito == true) {
+            System.out.println("Favorito: Favorito");
+        } else {
+            System.out.println("Favorito: Sin marcar");
+        }
+    }
+        
+    public void marcarFavorito() {
+        favorito = true; // cambia a verdadero
+
+        System.out.println(nombre + " agregado a favoritos. ");
+    }
+        
+    public void enviarDinero(double monto) {
+
+        System.out.println("Transferencia enviada:");
+        System.out.println("Destinatario: " + nombre);
+        System.out.println("Cuenta: " + cuentaDestino);
+        System.out.println("Monto: $" + monto);
+    }
+}
