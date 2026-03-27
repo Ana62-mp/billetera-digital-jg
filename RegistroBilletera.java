@@ -32,7 +32,29 @@ public class RegistroBilletera {
 	}
 
 	// registra un nuevo
+public boolean registrarBilletera(String cuenta, String propietario) {
 
+		// Validación de parámetros
+
+		if (cuenta == null || cuenta.trim().isEmpty()) {
+			throw new IllegalArgumentException("La cuenta no puede ser null o vacía");
+		}
+		if (propietario == null || propietario.trim().isEmpty()) {
+			throw new IllegalArgumentException("El propietario no puede ser null o vacío");
+		}
+
+		// Verificar capacidad
+
+		if (totalRegistros >= CAPACIDAD_MAXIMA) {
+			System.out.println("Error: Capacidad máxima alcanzada (" + CAPACIDAD_MAXIMA + " billeteras)");
+			return false;
+		}
+
+		// Verificar si la cuenta ya existe (evitar duplicados)
+		if (cuentaExiste(cuenta)) {
+			System.out.println("Error: La cuenta " + cuenta + " ya está registrada");
+			return false;
+		}
 
 
 
