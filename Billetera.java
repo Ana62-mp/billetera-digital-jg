@@ -20,5 +20,10 @@ public class Billetera {
         // Conversión de boolean a "Sí" o "No" [cite: 225]
         System.out.println("Estado: " + (activa ? "Activa" : "No"));
     }
+    public void depositar(double monto) {
+        this.saldo += monto;
+        System.out.println("Depósito exitoso: +$" + monto);
+        System.out.println("Nuevo saldo: $" + saldo);
+    }
 
 }
