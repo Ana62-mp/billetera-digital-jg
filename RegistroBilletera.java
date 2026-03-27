@@ -55,7 +55,42 @@ public boolean registrarBilletera(String cuenta, String propietario) {
 			System.out.println("Error: La cuenta " + cuenta + " ya está registrada");
 			return false;
 		}
+// Registrar la billetera
+		cuentas[totalRegistros] = cuenta.trim();
+		propietarios[totalRegistros] = propietario.trim();
+		totalRegistros++;
 
+		// Imprimir confirmación
+		System.out.println(MENSAJE_REGISTRO + cuenta.trim() + SEPARADOR + propietario.trim());
+
+		return true;
+	}
+
+	// busca
+
+	public boolean buscarCuenta(String cuenta) {
+
+		// Validación
+
+		if (cuenta == null || cuenta.trim().isEmpty()) {
+			throw new IllegalArgumentException("La cuenta a buscar no puede ser null o vacía");
+		}
+
+		String cuentaBuscar = cuenta.trim();
+
+		// Búsqueda(arreglo)
+
+		for (int i = 0; i < totalRegistros; i++) {
+			if (cuentas[i].equals(cuentaBuscar)) {
+				System.out.println(MENSAJE_ENCONTRADA + cuentaBuscar + SEPARADOR_PROPIETARIO + propietarios[i]);
+				return true;
+			}
+		}
+
+		// no existe
+		System.out.println(MENSAJE_NO_ENCONTRADA + cuentaBuscar);
+		return false;
+	}
 
 
 
